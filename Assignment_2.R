@@ -1,3 +1,6 @@
+## makeCacheMatrix: This function creates a special "matrix" object.
+## This code make n*n matrix.
+
 library(MASS)
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -16,6 +19,11 @@ makeCacheMatrix <- function(x = matrix()) {
        setinv = setinv,
        getinv = getinv)
 }
+
+
+## cacheSolve: This function creates a invers matrix which was created above.
+## If we have already created invers matrix, this code excute message "getting cached data".
+
 cacheSolve <- function(x, ...) {
   m <- x$getinv()
   if(!is.null(inv)) {
